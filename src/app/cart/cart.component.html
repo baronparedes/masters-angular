@@ -2,10 +2,50 @@
   <div class="col-sm-12">
     <mat-card>
       <mat-card-title>
+        Client Details
+      </mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="form-name">
+          <input matInput type="text" placeholder="name" 
+            [(ngModel)]="order.client.name" required [disabled]="order.isCompleted" />
+        </mat-form-field>
+        <br/>
+        <mat-form-field class="form-address">
+          <input matInput type="text" placeholder="address" 
+            [(ngModel)]="order.client.address" required [disabled]="order.isCompleted" />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="text-right">
+        <button *ngIf="!order.isCompleted"mat-raised-button color="primary" 
+          (click)="onCompleteOrder()">Complete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-12">
+    <mat-card>
+      <mat-card-title>
         Shopping Cart
         <mat-icon>shopping_cart</mat-icon>
         <span class="badge">{{orderCount}}</span>
       </mat-card-title>
+      <mat-card-content>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Order Details
+            </mat-panel-title>
+            <mat-panel-description>
+              PHP {{orderTotal}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div *ngFor="let orderDetail of order.orderDetails">
+            <app-order-detail [orderDetail]="orderDetail" [orderCompleted]="order.isCompleted"></app-order-detail>
+          </div>
+        </mat-expansion-panel>
+      </mat-card-content>
     </mat-card>
   </div>
 </div>

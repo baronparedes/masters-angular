@@ -1,5 +1,6 @@
 import { Component, OnChanges, Input } from '@angular/core';
 import { CatalogService } from '../catalog.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-selected-pizza',
@@ -9,7 +10,8 @@ import { CatalogService } from '../catalog.service';
 export class SelectedPizzaComponent implements OnChanges {
   @Input() pizza: Entities.Pizza;
 
-  constructor(private catalogService: CatalogService) {
+  constructor(private catalogService: CatalogService,
+    private cartService: CartService) {
   }
 
   ngOnChanges() {
@@ -20,6 +22,7 @@ export class SelectedPizzaComponent implements OnChanges {
   }
 
   onAddToCart() {
+    this.cartService.addToCart(this.pizza);
     this.pizza = undefined;
   }
 }

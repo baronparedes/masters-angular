@@ -1,1 +1,25 @@
-<app-cart></app-cart>
+<div class="row">
+    <div class="col-sm-9">
+        <label>
+            {{orderDetail?.pizza?.name}}
+        </label>
+        <br/>
+        <span *ngFor="let item of orderDetail.pizza.ingredients" class="text-muted">
+            {{item.ingredient}}
+        </span>
+        <h4 class="pull-right">
+            PHP {{orderDetail.quantity * orderDetail.pizza.price}}
+        </h4>
+    </div>
+    <div class="col-sm-3">
+        <mat-form-field class="form-quantity">
+            <input matInput 
+                [disabled]="orderCompleted"
+                type="number" 
+                placeholder="quantity"
+                min=0
+                [(ngModel)]="orderDetail.quantity" 
+                (ngModelChange)="onQuantityChange()" />
+        </mat-form-field>
+    </div>
+</div>

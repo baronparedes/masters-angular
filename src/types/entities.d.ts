@@ -1,47 +1,47 @@
 declare module Entities {
-    export class PizzaSize {
-        public inches: number;
-        public description: string;
+    export interface PizzaSize {
+        inches: number;
+        description: string;
     }
 
-    export class Pizza {
-        public pizzaId: number;
-        public name: string;
-        public ingredients?: PizzaIngredient[];
-        public size?: PizzaSize;
-        public image?: string;
-        public price: number;
+    export interface Pizza {
+        pizzaId: number;
+        name: string;
+        ingredients?: PizzaIngredient[];
+        size?: PizzaSize;
+        image?: string;
+        price: number;
     }
 
-    export class PizzaIngredient {
-        public pizzaId: number;
-        public ingredient: string;
+    export interface PizzaIngredient {
+        pizzaId: number;
+        ingredient: string;
     }
 
-    export class PizzaCatalog {
-        public pizzaList: Pizza[];
-        public selectedPizza: Pizza;
-        public pizzaSizes: PizzaSize[];
+    export interface PizzaCatalog {
+        pizzaList: Pizza[];
+        selectedPizza: Pizza;
+        pizzaSizes: PizzaSize[];
     }
 
-    export class Client {
-        public clientName: string;
-        public clientAddress: string; 
+    export interface Client {
+        name: string;
+        address: string; 
     }
 
-    export class Order {
-        public orderId: number;
-        public client: Client;
-        public isCompleted: boolean;
-        public orderDetails: OrderDetail[];
+    export interface Order {
+        orderId: number;
+        client: Client;
+        isCompleted: boolean;
+        orderDetails: OrderDetail[];
     }
 
-    export class OrderDetail {
-        public orderDetailId: number;
-        public orderId: number;
-        public pizzaId: number;
-        public quantity: number;
-        public pizza: Pizza;
-        public order: Order;
+    export interface OrderDetail {
+        orderDetailId: number;
+        orderId: number;
+        pizzaId: number;
+        quantity: number;
+        pizza: Pizza;
+        order: Order;
     }
 }
