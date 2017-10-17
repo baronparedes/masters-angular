@@ -14,9 +14,11 @@ export class PizzaMenuComponent implements OnInit, OnDestroy {
   catalog: Entities.PizzaCatalog;
   pizzaCount: number;
   cartClosed: boolean;
+  selectedPizzaSize: Entities.PizzaSize;
 
   constructor(private catalogService: CatalogService, private cartService: CartService) {
     this.catalog = this.catalogService.getCatalog();
+    this.selectedPizzaSize = this.catalog.pizzaSizes[0];
     this.pizzaCount = this.catalog ? (this.catalog.pizzaList ? this.catalog.pizzaList.length : 0) : 0;
   }
 
@@ -30,6 +32,9 @@ export class PizzaMenuComponent implements OnInit, OnDestroy {
   }
 
   onSelectPizza(pizza: Entities.Pizza) {
-    this.catalog.selectedPizza = pizza;
+    this.catalog.selectedPizza = {
+      ...pizza,
+      size: this.selectedPizzaSize
+    };
   }
 }

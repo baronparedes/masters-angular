@@ -6,7 +6,11 @@
     {{pizza.name}}
   </mat-card-title>
   <mat-card-subtitle>
-    PHP {{pizza.price}}
+    {{pizza.size.description}} ({{pizza.size.inches}}")
+    <br/>
+    <strong>
+        PHP {{pizza.price}}
+    </strong>
   </mat-card-subtitle>
   <mat-card-content>
     <div class="row">

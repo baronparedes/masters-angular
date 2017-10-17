@@ -3,6 +3,9 @@
         <label>
             {{orderDetail?.pizza?.name}}
         </label>
+        <span class="text-muted">
+            {{orderDetail?.pizza?.size?.description}} ({{orderDetail?.pizza?.size?.inches}}")
+        </span>
         <br/>
         <span *ngFor="let item of orderDetail.pizza.ingredients" class="text-muted">
             {{item.ingredient}}
