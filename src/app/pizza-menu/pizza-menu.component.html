@@ -13,7 +13,7 @@
     </mat-card>
   </div>
 </div>
-<div class="text-center">
+<div class="text-center" *ngIf="!cartClosed">
     <mat-radio-group [(ngModel)]="selectedPizzaSize">
       <mat-radio-button *ngFor="let size of catalog.pizzaSizes" [value]="size" [checked]="selectedPizzaSize === size" class="r-btn-size">
         {{size.description}} ({{size.inches}}")
