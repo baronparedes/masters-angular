@@ -1,15 +1,15 @@
 <mat-toolbar color="primary">
     <span>{{title}}</span>
 </mat-toolbar>
-<mat-card class="card-demo">
+<mat-card class="card-content">
     <mat-card-title class="text-center">Magenic Pizza</mat-card-title>
     <mat-card-content>
-        <div class="container">
-            <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
-                <div fxFlex>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
                     <app-catalog></app-catalog>
                 </div>
-                <div fxFlex>
+                <div class="col-md-6">
                     <app-order-detail></app-order-detail>
                 </div>
             </div>

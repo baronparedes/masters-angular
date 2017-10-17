@@ -27,7 +27,7 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
+    // FlexLayoutModule,
     MaterialModule
   ],
   providers: [CatalogService],

@@ -18,4 +18,7 @@ export class PizzaMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelectPizza(pizza: Entities.Pizza) {
+    this.catalog.selectedPizza = pizza;
+  }
 }

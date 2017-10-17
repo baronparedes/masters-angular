@@ -1,3 +1,25 @@
-<p>
-  selected-pizza works!
-</p>
+<mat-card *ngIf="pizza">
+  <mat-card-actions class="pull-right">
+    <button mat-raised-button color="primary" (click)="onAddToCart()">Add to Cart</button>
+  </mat-card-actions>
+  <mat-card-title>
+    {{pizza.name}}
+  </mat-card-title>
+  <mat-card-subtitle>
+    PHP {{pizza.price}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-md-4">
+        <ul>
+          <li *ngFor="let item of pizza.ingredients">
+            {{item.ingredient}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <img class="img-pizza" [src]="pizza.image" />
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
