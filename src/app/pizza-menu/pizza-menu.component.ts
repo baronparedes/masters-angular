@@ -11,7 +11,7 @@ export class PizzaMenuComponent implements OnInit {
   pizzaCount: number;
 
   constructor(private catalogService: CatalogService) {
-    this.catalog = catalogService.getCatalog();
+    this.catalog = this.catalogService.getCatalog();
     this.pizzaCount = this.catalog ? (this.catalog.pizzaList ? this.catalog.pizzaList.length : 0) : 0;
   }
 
