@@ -7,9 +7,9 @@ declare module Entities {
     export class Pizza {
         public pizzaId: number;
         public name: string;
-        public ingredients: PizzaIngredient[];
-        public size: PizzaSize;
-        public image: string;
+        public ingredients?: PizzaIngredient[];
+        public size?: PizzaSize;
+        public image?: string;
         public price: number;
     }
 
