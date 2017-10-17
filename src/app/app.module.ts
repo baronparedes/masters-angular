@@ -1,6 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from './material/material.module';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from './material/material.module';
 
 import { CatalogService } from './catalog.service';
 
@@ -22,6 +25,9 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
     MaterialModule
   ],
   providers: [CatalogService],

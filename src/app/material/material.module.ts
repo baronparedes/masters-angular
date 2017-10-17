@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatGridListModule
+  MatGridListModule, MatButtonModule, MatCardModule,
+  MatMenuModule, MatIconModule, MatToolbarModule
 } from '@angular/material';
 
 const modules = [
-  NoopAnimationsModule,
-  MatGridListModule
+  MatGridListModule, MatButtonModule, MatCardModule,
+  MatMenuModule, MatIconModule, MatToolbarModule
 ];
 
 @NgModule({

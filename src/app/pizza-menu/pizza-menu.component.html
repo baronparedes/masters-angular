@@ -1,7 +1,3 @@
-<mat-grid-list cols="3" rowHeight="{{pizzaCount}}:1">
-  <mat-grid-tile *ngFor="let pizza of catalog.pizzaList">
-    <button class="btn btn-primary pizza-button">
-      {{pizza.name}}
-    </button>
-  </mat-grid-tile>
-</mat-grid-list>
+<button mat-raised-button color="primary" *ngFor="let pizza of catalog.pizzaList">
+    {{pizza.name}}
+  </button>
