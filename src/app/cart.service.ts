@@ -59,5 +59,6 @@ export class CartService {
 
   newOrder(): void {
     this.order.next(generateOrder());
+    this.cartClosed.next(false);
   }
 }

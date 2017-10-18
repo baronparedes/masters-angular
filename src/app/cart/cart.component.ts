@@ -38,4 +38,8 @@ export class CartComponent implements OnInit, OnDestroy {
     this.cartService.completeOrder(this.order);
   }
 
+  onNewOrder() {
+    this.cartService.newOrder();
+  }
+
 }

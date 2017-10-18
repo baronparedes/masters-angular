@@ -49,3 +49,7 @@
     </mat-card>
   </div>
 </div>
+<div class="text-right" *ngIf="order.isCompleted">
+  <br/>
+  <button mat-raised-button color="primary" (click)="onNewOrder()">New Order</button>
+</div>
