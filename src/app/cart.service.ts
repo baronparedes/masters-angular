@@ -1,20 +1,24 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-const initialOrder: Entities.Order = {
-  client: {
-    address: '',
-    name: ''
-  },
-  isCompleted: false,
-  orderId: Math.random(),
-  orderDetails: []
-};
+function generateOrder(): Entities.Order {
+  const order: Entities.Order = {
+    client: {
+      address: '',
+      name: ''
+    },
+    isCompleted: false,
+    orderId: Math.random(),
+    orderDetails: []
+  };
+
+  return order;
+}
 
 @Injectable()
 export class CartService {
 
-  private order: BehaviorSubject<Entities.Order> = new BehaviorSubject<Entities.Order>(initialOrder);
+  private order: BehaviorSubject<Entities.Order> = new BehaviorSubject<Entities.Order>(generateOrder());
   public order$ = this.order.asObservable();
 
   private cartClosed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -53,4 +57,7 @@ export class CartService {
     this.cartClosed.next(true);
   }
 
+  newOrder(): void {
+    this.order.next(generateOrder());
+  }
 }

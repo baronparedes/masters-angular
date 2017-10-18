@@ -1,0 +1,56 @@
+[
+    {
+        "pizzaId": 1,
+        "name": "Maddy",
+        "price": 590,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-maddy-default-e1479167621575.png"
+    },
+    {
+        "pizzaId": 2,
+        "name": "Mad Dog",
+        "price": 850,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-mad-dog-e1479167997381.png"
+    },
+    {
+        "pizzaId": 3,
+        "name": "Caspian",
+        "price": 710,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-caspian-default-e1479167513823.png"
+    },
+    {
+        "pizzaId": 4,
+        "name": "Tristan",
+        "price": 680,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-tristan-default-e1479167443615.png"
+    },
+    {
+        "pizzaId": 5,
+        "name": "Dominic",
+        "price": 650,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-dominic-default-e1479168048226.png"
+    },
+    {
+        "pizzaId": 6,
+        "name": "Lucy",
+        "price": 730,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-lucy-sunshine-default-e1479167366641.png"
+    },
+    {
+        "pizzaId": 7,
+        "name": "Jasper",
+        "price": 700,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-jasper-default-e1479167423363.png"
+    },
+    {
+        "pizzaId": 8,
+        "name": "Pizza Salad",
+        "price": 690,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-pizza-salad-default-e1479167778991.png"
+    },
+    {
+        "pizzaId": 9,
+        "name": "Calexico",
+        "price": 650,
+        "image": "https://cdn.modpizza.com/wp-content/uploads/2016/11/mod-pizza-calexico-default-e1479167492741.png"
+    }
+]

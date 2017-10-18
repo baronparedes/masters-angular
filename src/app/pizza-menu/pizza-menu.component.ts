@@ -16,13 +16,17 @@ export class PizzaMenuComponent implements OnInit, OnDestroy {
   cartClosed: boolean;
   selectedPizzaSize: Entities.PizzaSize;
 
-  constructor(private catalogService: CatalogService, private cartService: CartService) {
-    this.catalog = this.catalogService.getCatalog();
+  constructor(private catalogService: CatalogService, private cartService: CartService) {  }
+
+  setCatalog(catalog: Entities.PizzaCatalog) {
+    this.catalog = catalog;
     this.selectedPizzaSize = this.catalog.pizzaSizes[0];
     this.pizzaCount = this.catalog ? (this.catalog.pizzaList ? this.catalog.pizzaList.length : 0) : 0;
   }
 
   ngOnInit() {
+    this.catalogService.getCatalog();
+    this.catalogService.catalog$.takeUntil(this.destroyed$).subscribe(_ => this.setCatalog(_));
     this.cartService.cartClosed$.takeUntil(this.destroyed$).subscribe(_ => this.cartClosed = _);
   }
 

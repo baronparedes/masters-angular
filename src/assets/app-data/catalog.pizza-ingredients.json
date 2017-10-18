@@ -1,0 +1,11 @@
+[
+    {"ingredient": "Ingredient 1", "pizzaId": 1},
+    {"ingredient": "Ingredient 2", "pizzaId": 2},
+    {"ingredient": "Ingredient 3", "pizzaId": 3},
+    {"ingredient": "Ingredient 4", "pizzaId": 4},
+    {"ingredient": "Ingredient 5", "pizzaId": 5},
+    {"ingredient": "Ingredient 6", "pizzaId": 6},
+    {"ingredient": "Ingredient 7", "pizzaId": 7},
+    {"ingredient": "Ingredient 8", "pizzaId": 8},
+    {"ingredient": "Ingredient 9", "pizzaId": 9}
+]

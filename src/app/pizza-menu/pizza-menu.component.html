@@ -1,26 +1,28 @@
-<div class="row">
-  <div class="col-md-4" *ngFor="let pizza of catalog.pizzaList">
-    <mat-card class="card-pizza">
-      <mat-card-title>
-        {{pizza.name}}
-      </mat-card-title>
-      <mat-card-subtitle>
-        PHP {{pizza.price}}
-      </mat-card-subtitle>
-      <mat-card-actions>
-        <button *ngIf="!cartClosed" mat-raised-button (click)="onSelectPizza(pizza)">SELECT</button>
-      </mat-card-actions>
-    </mat-card>
+<div *ngIf="catalog">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let pizza of catalog.pizzaList">
+      <mat-card class="card-pizza">
+        <mat-card-title>
+          {{pizza.name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          PHP {{pizza.price}}
+        </mat-card-subtitle>
+        <mat-card-actions>
+          <button *ngIf="!cartClosed" mat-raised-button (click)="onSelectPizza(pizza)">SELECT</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
-</div>
-<div class="text-center" *ngIf="!cartClosed">
+  <div class="text-center" *ngIf="!cartClosed">
     <mat-radio-group [(ngModel)]="selectedPizzaSize">
       <mat-radio-button *ngFor="let size of catalog.pizzaSizes" [value]="size" [checked]="selectedPizzaSize === size" class="r-btn-size">
         {{size.description}} ({{size.inches}}")
       </mat-radio-button>
     </mat-radio-group>
   </div>
-<br/>
-<div *ngIf="catalog.selectedPizza">
-  <app-selected-pizza [pizza]="catalog.selectedPizza"></app-selected-pizza>
+  <br/>
+  <div *ngIf="catalog.selectedPizza">
+    <app-selected-pizza [pizza]="catalog.selectedPizza"></app-selected-pizza>
+  </div>
 </div>

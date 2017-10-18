@@ -16,8 +16,9 @@ export class SelectedPizzaComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.pizza) {
-      const ingredients = this.catalogService.getIngredients(this.pizza.pizzaId);
-      this.pizza.ingredients = ingredients;
+      this.catalogService.getIngredients(this.pizza.pizzaId).then(data => {
+        this.pizza.ingredients = data;
+      });
     }
   }
 
