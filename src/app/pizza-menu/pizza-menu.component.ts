@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { Subject, Subscription } from 'rxjs/Rx';
 import { CatalogService } from '../catalog.service';
 import { CartService } from '../cart.service';
+import { SelectedPizzaDialogComponent } from '../selected-pizza-dialog/selected-pizza-dialog.component';
 
 @Component({
   selector: 'app-pizza-menu',
@@ -16,7 +18,10 @@ export class PizzaMenuComponent implements OnInit, OnDestroy {
   cartClosed: boolean;
   selectedPizzaSize: Entities.PizzaSize;
 
-  constructor(private catalogService: CatalogService, private cartService: CartService) {  }
+  constructor(
+    private catalogService: CatalogService,
+    private cartService: CartService,
+    public dialog: MatDialog) {  }
 
   setCatalog(catalog: Entities.PizzaCatalog) {
     this.catalog = catalog;
@@ -40,5 +45,12 @@ export class PizzaMenuComponent implements OnInit, OnDestroy {
       ...pizza,
       size: this.selectedPizzaSize
     };
+    this.openDialog();
+  }
+
+  openDialog(): void {
+    const dialog = this.dialog.open(SelectedPizzaDialogComponent, {
+      data: this.catalog.selectedPizza
+    });
   }
 }

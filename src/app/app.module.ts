@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { PizzaMenuComponent } from './pizza-menu/pizza-menu.component';
 import { SelectedPizzaComponent } from './selected-pizza/selected-pizza.component';
+import { SelectedPizzaDialogComponent } from './selected-pizza-dialog/selected-pizza-dialog.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
@@ -20,7 +21,11 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     CartComponent,
     PizzaMenuComponent,
     SelectedPizzaComponent,
+    SelectedPizzaDialogComponent,
     OrderDetailComponent
+  ],
+  entryComponents: [
+    SelectedPizzaDialogComponent
   ],
   imports: [
     BrowserModule,

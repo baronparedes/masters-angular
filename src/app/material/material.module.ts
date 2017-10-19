@@ -3,14 +3,14 @@ import {
   MatGridListModule, MatButtonModule, MatCardModule,
   MatMenuModule, MatIconModule, MatToolbarModule,
   MatExpansionModule, MatFormFieldModule, MatInputModule,
-  MatRadioModule
+  MatRadioModule, MatDialogModule
 } from '@angular/material';
 
 const modules = [
   MatGridListModule, MatButtonModule, MatCardModule,
   MatMenuModule, MatIconModule, MatToolbarModule,
   MatExpansionModule, MatFormFieldModule, MatInputModule,
-  MatRadioModule
+  MatRadioModule, MatDialogModule
 ];
 
 @NgModule({
