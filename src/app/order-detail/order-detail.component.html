@@ -20,7 +20,7 @@
                 (ngModelChange)="onQuantityChange()" />
         </mat-form-field>
         <div class="pull-right" *ngIf="!orderCompleted">
-            <button mat-raised-button (click)="onRemoveOrder(orderDetail)">Remove</button>
+            <button mat-raised-button (confirm)="onRemoveOrder(orderDetail)">Remove</button>
         </div>
     </div>
 </div>

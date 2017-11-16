@@ -15,7 +15,7 @@ export class SelectedPizzaComponent implements OnChanges {
   constructor(
     private catalogService: CatalogService,
     private cartService: CartService,
-    public diloagRef: MatDialogRef<SelectedPizzaDialogComponent>) {
+    public dialogRef: MatDialogRef<SelectedPizzaDialogComponent>) {
   }
 
   ngOnChanges() {
@@ -29,6 +29,6 @@ export class SelectedPizzaComponent implements OnChanges {
   onAddToCart() {
     this.cartService.addToCart(this.pizza);
     this.pizza = undefined;
-    this.diloagRef.close();
+    this.dialogRef.close();
   }
 }

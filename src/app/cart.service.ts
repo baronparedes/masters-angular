@@ -4,8 +4,15 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 function generateOrder(): Entities.Order {
   const order: Entities.Order = {
     client: {
-      address: '',
-      name: ''
+      address: {
+        city: '',
+        street: '',
+        zip: ''
+      },
+      firstName: '',
+      lastName: '',
+      email: '',
+      contactNumber: ''
     },
     isCompleted: false,
     orderId: Math.random(),
@@ -58,8 +65,7 @@ export class CartService {
   completeOrder(order: Entities.Order): void {
     const currentOrder = this.order.getValue();
     currentOrder.isCompleted = true;
-    currentOrder.client.address = order.client.address;
-    currentOrder.client.name = order.client.name;
+    currentOrder.client = order.client;
     this.order.next(currentOrder);
     this.cartClosed.next(true);
   }
