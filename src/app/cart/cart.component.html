@@ -5,7 +5,7 @@
         Client Details
       </mat-card-title>
       <mat-card-content>
-        <form>
+        <form #orderForm="ngForm">
           <fieldset [disabled]="order.isCompleted" class="form-group col-sm-6">
             <mat-form-field class="form-firstName">
               <input matInput type="text" placeholder="first name" [(ngModel)]="order.client.firstName" name="firstName" required/>
@@ -39,7 +39,9 @@
         </form>
       </mat-card-content>
       <mat-card-actions class="text-right">
-        <button *ngIf="!order.isCompleted" mat-raised-button color="primary" (click)="onCompleteOrder()">Complete Order</button>
+        <button *ngIf="!order.isCompleted" mat-raised-button color="primary" (click)="onCompleteOrder()" [disabled]="orderForm.invalid">
+          Complete Order
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
