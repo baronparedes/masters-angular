@@ -22,7 +22,6 @@ export class ConfirmDirective {
 }
 
 @Component({
-  selector: 'confirm-dialog',
   template:
   `<h2 mat-dialog-title>Confirm</h2>
   <mat-dialog-content>Are you sure?</mat-dialog-content>
