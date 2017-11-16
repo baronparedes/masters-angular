@@ -20,4 +20,7 @@ export class OrderDetailComponent implements OnInit {
     this.cartService.updateQuantity(this.orderDetail.orderDetailId, this.orderDetail.quantity);
   }
 
+  onRemoveOrder(orderDetail: Entities.OrderDetail): void {
+    this.cartService.removeFromCart(orderDetail);
+  }
 }

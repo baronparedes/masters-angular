@@ -26,6 +26,13 @@ export class CartService {
 
   constructor() { }
 
+  removeFromCart(orderDetail: Entities.OrderDetail): void {
+    const currentOrder = this.order.getValue();
+    const i = currentOrder.orderDetails.findIndex(_ => _.orderDetailId === orderDetail.orderDetailId);
+    currentOrder.orderDetails.splice(i, 1);
+    this.order.next(currentOrder);
+  }
+
   addToCart(pizza: Entities.Pizza): void {
     const currentOrder = this.order.getValue();
     const orderDetail: Entities.OrderDetail = {
