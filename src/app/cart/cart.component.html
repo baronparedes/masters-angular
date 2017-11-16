@@ -5,14 +5,38 @@
         Client Details
       </mat-card-title>
       <mat-card-content>
-        <mat-form-field class="form-name">
-          <input matInput type="text" placeholder="name" [(ngModel)]="order.client.name" required [disabled]="order.isCompleted" />
-        </mat-form-field>
-        <br/>
-        <mat-form-field class="form-address">
-          <input matInput type="text" placeholder="address" [(ngModel)]="order.client.address" required [disabled]="order.isCompleted"
-          />
-        </mat-form-field>
+        <form>
+          <fieldset [disabled]="order.isCompleted" class="form-group col-sm-6">
+            <mat-form-field class="form-firstName">
+              <input matInput type="text" placeholder="first name" [(ngModel)]="order.client.firstName" name="firstName" required/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-lastName">
+              <input matInput type="text" placeholder="last name" [(ngModel)]="order.client.lastName" name="lastName" required/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-email">
+              <input matInput type="email" placeholder="email" [(ngModel)]="order.client.email" name="email" required/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-contactNumber">
+              <input matInput type="text" placeholder="contact number" [(ngModel)]="order.client.contactNumber" name="contactNumber" required/>
+            </mat-form-field>
+          </fieldset>
+          <fieldset [disabled]="order.isCompleted" class="form-group col-sm-6">
+            <mat-form-field class="form-address-street">
+              <input matInput type="text" placeholder="street" [(ngModel)]="order.client.address.street" name="street" required/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-address-city">
+              <input matInput type="text" placeholder="city" [(ngModel)]="order.client.address.city" name="city" required/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field class="form-address-zip">
+              <input matInput type="text" placeholder="zip" [(ngModel)]="order.client.address.zip" name="zip" required/>
+            </mat-form-field>
+          </fieldset>
+        </form>
       </mat-card-content>
       <mat-card-actions class="text-right">
         <button *ngIf="!order.isCompleted" mat-raised-button color="primary" (click)="onCompleteOrder()">Complete Order</button>
@@ -49,5 +73,5 @@
 </div>
 <div class="text-right" *ngIf="order.isCompleted">
   <br/>
-  <button mat-raised-button color="primary" (click)="onNewOrder()">New Order</button>
+  <!-- <button mat-raised-button color="primary" (click)="onNewOrder()">New Order</button> -->
 </div>

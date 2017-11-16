@@ -19,7 +19,7 @@
             <input matInput [disabled]="orderCompleted" type="number" placeholder="quantity" min=0 [(ngModel)]="orderDetail.quantity"
                 (ngModelChange)="onQuantityChange()" />
         </mat-form-field>
-        <div class="pull-right">
+        <div class="pull-right" *ngIf="!orderCompleted">
             <button mat-raised-button (click)="onRemoveOrder(orderDetail)">Remove</button>
         </div>
     </div>

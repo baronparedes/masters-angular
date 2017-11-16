@@ -25,8 +25,17 @@ declare module Entities {
     }
 
     export interface Client {
-        name: string;
-        address: string; 
+        firstName: string;
+        lastName: string;
+        email: string;
+        contactNumber: string;
+        address: Address; 
+    }
+
+    export interface Address {
+        street: string;
+        city: string;
+        zip: string;
     }
 
     export interface Order {
