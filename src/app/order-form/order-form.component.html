@@ -4,39 +4,88 @@
   </mat-card-title>
   <mat-card-content>
     <div class="container-fluid">
-      <form #orderForm="ngForm" (submit)="onSubmitOrder()">
+      <form #orderForm="ngForm" (ngSubmit)="onSubmitOrder(orderForm)"
+        novalidate>
         <fieldset [disabled]="order.isCompleted" class="form-group col-sm-6">
           <mat-form-field class="form-firstName">
-            <input matInput type="text" placeholder="first name" [(ngModel)]="order.client.firstName" name="firstName" required/>
+            <input matInput type="text" class="from-control" placeholder="first name"
+              [(ngModel)]="order.client.firstName" name="firstName"
+              required/>
           </mat-form-field>
           <br/>
           <mat-form-field class="form-lastName">
-            <input matInput type="text" placeholder="last name" [(ngModel)]="order.client.lastName" name="lastName" required/>
+            <input matInput type="text" class="from-control" placeholder="last name"
+              [(ngModel)]="order.client.lastName" name="lastName"
+              required/>
           </mat-form-field>
           <br/>
           <mat-form-field class="form-email">
-            <input matInput type="email" placeholder="email" [(ngModel)]="order.client.email" name="email" required/>
+            <input matInput type="email" class="from-control" placeholder="email"
+              [(ngModel)]="order.client.email" name="email" #email="ngModel"
+              required email />
+            <mat-error *ngIf="email.invalid">
+              <p *ngIf="email.errors['email']">Invalid Email</p>
+            </mat-error>
           </mat-form-field>
           <br/>
           <mat-form-field class="form-contactNumber">
-            <input matInput type="text" placeholder="contact number" [(ngModel)]="order.client.contactNumber" name="contactNumber" required/>
+            <input matInput type="text" class="from-control" placeholder="contact number"
+              [(ngModel)]="order.client.contactNumber" name="contactNumber"
+              #contactNumber="ngModel" required [pattern]="contactNumberPattern"
+            />
+            <mat-hint>include area code</mat-hint>
+            <mat-error *ngIf="contactNumber.invalid">
+              <p *ngIf="contactNumber.errors['pattern']">(000) 000-0000</p>
+            </mat-error>
           </mat-form-field>
         </fieldset>
-        <fieldset [disabled]="order.isCompleted" class="form-group col-sm-6">
+        <fieldset [disabled]="order.isCompleted" class="form-group col-sm-6"
+          ngModelGroup="address">
           <mat-form-field class="form-address-street">
-            <input matInput type="text" placeholder="street" [(ngModel)]="order.client.address.street" name="street" required/>
+            <input matInput type="text" placeholder="street" [(ngModel)]="order.client.address.street"
+              name="street" #street="ngModel" required [pattern]="streetPattern"
+            />
+            <mat-hint>must start with a street number</mat-hint>
+            <mat-error *ngIf="street.invalid">
+              <p *ngIf="street.errors['pattern']">must start with a street number</p>
+            </mat-error>
           </mat-form-field>
           <br/>
           <mat-form-field class="form-address-city">
-            <input matInput type="text" placeholder="city" [(ngModel)]="order.client.address.city" name="city" required/>
+            <input matInput type="text" placeholder="city" [(ngModel)]="order.client.address.city"
+              name="city" required/>
           </mat-form-field>
           <br/>
           <mat-form-field class="form-address-zip">
-            <input matInput type="text" placeholder="zip" [(ngModel)]="order.client.address.zip" name="zip" required/>
+            <input matInput type="text" placeholder="zip" [(ngModel)]="order.client.address.zip"
+              name="zip" #zip="ngModel" required [pattern]="zipPattern"
+            />
+            <mat-hint>
+              <span>
+                AA00 0AA
+                <br/>
+                <strong>
+                  <i>
+                    i.e. IG11 1ZZ
+                  </i>
+                </strong>
+              </span>
+            </mat-hint>
+            <mat-error *ngIf="zip.invalid">
+              <span>
+                AA00 0AA
+                <br/>
+                <strong>
+                  <i>
+                    i.e. IG11 1ZZ
+                  </i>
+                </strong>
+              </span>
+            </mat-error>
           </mat-form-field>
         </fieldset>
         <div class="col-sm-12">
-          <button *ngIf="!order.isCompleted" mat-raised-button color="primary" type="submit" [disabled]="orderForm.invalid">
+          <button type="submit" mat-raised-button color="primary" *ngIf="!order.isCompleted">
             Complete Order
           </button>
         </div>
