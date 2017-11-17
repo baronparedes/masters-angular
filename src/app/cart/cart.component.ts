@@ -25,7 +25,6 @@ export class CartComponent implements OnInit, OnDestroy {
         orderTotal += (o.pizza.price * o.quantity);
       });
       this.orderTotal = orderTotal;
-      console.log(_);
     });
   }
 
@@ -33,13 +32,4 @@ export class CartComponent implements OnInit, OnDestroy {
     this.destroyed$.next();
     this.destroyed$.complete();
   }
-
-  onCompleteOrder() {
-    this.cartService.completeOrder(this.order);
-  }
-
-  onNewOrder() {
-    this.cartService.newOrder();
-  }
-
 }

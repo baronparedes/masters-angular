@@ -47,8 +47,7 @@ export class CartService {
       orderId: currentOrder.orderId,
       pizzaId: pizza.pizzaId,
       quantity: 1,
-      pizza: pizza,
-      order: currentOrder
+      pizza: pizza
     };
     currentOrder.orderDetails.push(orderDetail);
     this.order.next(currentOrder);

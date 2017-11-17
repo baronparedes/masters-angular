@@ -51,6 +51,5 @@ declare module Entities {
         pizzaId: number;
         quantity: number;
         pizza: Pizza;
-        order: Order;
     }
 }

@@ -15,6 +15,7 @@ import { SelectedPizzaComponent } from './selected-pizza/selected-pizza.componen
 import { SelectedPizzaDialogComponent } from './selected-pizza-dialog/selected-pizza-dialog.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { ConfirmDirective, ConfirmDialogComponent } from './confirm.directive';
+import { OrderFormComponent } from './order-form/order-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ConfirmDirective, ConfirmDialogComponent } from './confirm.directive';
     SelectedPizzaComponent,
     SelectedPizzaDialogComponent,
     OrderDetailComponent,
-    ConfirmDialogComponent, ConfirmDirective
+    ConfirmDialogComponent, ConfirmDirective, OrderFormComponent
   ],
   entryComponents: [
     SelectedPizzaDialogComponent,
